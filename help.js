@@ -54,3 +54,8 @@ export function knight(position) {
     };
   }
 }
+
+export function comparator(sSquare, eSquare) {
+  console.log(knight(sSquare));
+  console.log(knight(eSquare));
+}

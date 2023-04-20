@@ -1,12 +1,32 @@
 import * as helper from "./help.js";
 
 function knightMoves(sSquare, eSquare) {
-  let a = helper.knight(sSquare);
-  let b = helper.knight(eSquare);
-  if (a.data[0] == 0 || a.data[1] == 0) a = helper.knight([1, 2]);
-  if (b.data[0] == 0 || b.data[1] == 0) b = helper.knight([1, 2]);
-  console.log(a);
-  console.log(b);
-}
+  if (sSquare[0] == 0 || sSquare[1] == 0) sSquare = [0, 0];
+  if (eSquare[0] == 0 || eSquare[1] == 0) eSquare = [0, 0];
+  if (JSON.stringify(sSquare) == JSON.stringify(eSquare))
+    console.log("You made no moves");
+  if (JSON.stringify(sSquare) != JSON.stringify(eSquare)) {
+    if (JSON.stringify(sSquare) == "[0,0]") {
+      sSquare = [1, 2];
+      if (JSON.stringify(sSquare) == JSON.stringify(eSquare)) {
+        console.log("Here are your moves:");
+        console.log(JSON.stringify([0, 0]));
+        console.log(JSON.stringify(sSquare));
+      } else {
+        helper.comparator(sSquare, eSquare);
+      }
+    }
 
-knightMoves([0, 8], [5, 0]);
+    if (JSON.stringify(eSquare) == "[0,0]") {
+      eSquare = [1, 2];
+      if (JSON.stringify(sSquare) == JSON.stringify(eSquare)) {
+        console.log("Here are your moves:");
+        console.log(JSON.stringify(eSquare));
+        console.log(JSON.stringify([0, 0]));
+      } else {
+        helper.comparator(sSquare, eSquare);
+      }
+    }
+  }
+}
+knightMoves([0, 0], [4, 4]);
