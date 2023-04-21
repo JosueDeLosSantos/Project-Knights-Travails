@@ -54,8 +54,11 @@ export function knight(position) {
     };
   }
 }
+// This function should search the path using BFS
+export function path(sSquare, eSquare) {
+  console.log(sSquare);
+  console.log(eSquare);
 
-export function comparator(sSquare, eSquare) {
-  console.log(knight(sSquare));
-  console.log(knight(eSquare));
+  /* Once the eSquare be found another function should return all the parents of 
+that node wich will also be the path*/
 }

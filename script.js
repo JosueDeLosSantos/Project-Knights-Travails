@@ -13,7 +13,7 @@ function knightMoves(sSquare, eSquare) {
         console.log(JSON.stringify([0, 0]));
         console.log(JSON.stringify(sSquare));
       } else {
-        helper.comparator(sSquare, eSquare);
+        helper.path(helper.knight(sSquare), helper.knight(eSquare));
       }
     }
 
@@ -24,9 +24,11 @@ function knightMoves(sSquare, eSquare) {
         console.log(JSON.stringify(eSquare));
         console.log(JSON.stringify([0, 0]));
       } else {
-        helper.comparator(sSquare, eSquare);
+        helper.path(helper.knight(sSquare), helper.knight(eSquare));
       }
     }
+
+    helper.path(helper.knight(sSquare), helper.knight(eSquare));
   }
 }
-knightMoves([0, 0], [4, 4]);
+knightMoves([1, 2], [4, 4]);
