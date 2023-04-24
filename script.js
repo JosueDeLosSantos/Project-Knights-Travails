@@ -1,5 +1,7 @@
 import * as helper from "./help.js";
 
+console.log(helper.board);
+
 function knightMoves(sSquare, eSquare) {
   if (sSquare[0] == 0 || sSquare[1] == 0) sSquare = [0, 0];
   if (eSquare[0] == 0 || eSquare[1] == 0) eSquare = [0, 0];
@@ -32,3 +34,8 @@ function knightMoves(sSquare, eSquare) {
   }
 }
 knightMoves([1, 2], [4, 4]);
+
+/* console.log(helper.knight([1, 2]));
+
+const josue = 0;
+console.log(josue?.user?.name); */
