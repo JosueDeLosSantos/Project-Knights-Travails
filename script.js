@@ -1,7 +1,5 @@
 import * as helper from "./help.js";
 
-console.log(helper.board);
-
 function knightMoves(sSquare, eSquare) {
   if (sSquare[0] == 0 || sSquare[1] == 0) sSquare = [0, 0];
   if (eSquare[0] == 0 || eSquare[1] == 0) eSquare = [0, 0];
@@ -15,7 +13,7 @@ function knightMoves(sSquare, eSquare) {
         console.log(JSON.stringify([0, 0]));
         console.log(JSON.stringify(sSquare));
       } else {
-        helper.path(helper.knight(sSquare), helper.knight(eSquare));
+        return helper.path(helper.knight(sSquare), helper.knight(eSquare));
       }
     }
 
@@ -26,16 +24,14 @@ function knightMoves(sSquare, eSquare) {
         console.log(JSON.stringify(eSquare));
         console.log(JSON.stringify([0, 0]));
       } else {
-        helper.path(helper.knight(sSquare), helper.knight(eSquare));
+        return helper.path(helper.knight(sSquare), helper.knight(eSquare));
       }
     }
 
-    helper.path(helper.knight(sSquare), helper.knight(eSquare));
+    return helper.path(helper.knight(sSquare), helper.knight(eSquare));
   }
 }
-knightMoves([1, 2], [4, 4]);
 
-/* console.log(helper.knight([1, 2]));
+console.log(knightMoves([1, 2], [1, 2]));
 
-const josue = 0;
-console.log(josue?.user?.name); */
+console.log(helper.path(helper.knight([4, 4]), helper.knight([4, 4])));
