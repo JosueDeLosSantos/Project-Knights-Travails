@@ -88,7 +88,7 @@ export function knight(position) {
   }
 }
 
-// This function should search the path using BFS
+// This function should search the path using the parent() function.
 
 export function path(sSquare, eSquare) {
   let result = [];
@@ -97,7 +97,7 @@ export function path(sSquare, eSquare) {
   while (JSON.stringify(sSquare.data) != JSON.stringify(result[0])) {
     result.unshift(parent(sSquare, knight(result[0])));
   }
-  result.unshift([0, 0]);
+
   //Finally adds the ending square to the path
   if (result.length > 1) result.push(eSquare.data);
   return result;
@@ -199,6 +199,3 @@ export function parent(sSquare, eSquare) {
     PathResponse(queue[0]);
   }
 }
-
-/* Once the eSquare be found another function should return all the parents of 
-that node wich will also be the path*/
